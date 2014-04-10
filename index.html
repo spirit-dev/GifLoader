@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>Gifloader by spirit-dev</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Gifloader</h1>
+        <h2>Simple JS script launching gif loader on demand into html5 page</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/spirit-dev/GifLoader/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/spirit-dev/GifLoader/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/spirit-dev/GifLoader" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a name="gifloader" class="anchor" href="#gifloader"><span class="octicon octicon-link"></span></a>GifLoader</h1>
+
+<p>Simple JS script launching gif loader on demand into html5 page
+This script fits all sizes of div (or other) on which you want to apply Gif.
+GifLoader is also able to update himself in case of div size change</p>
+
+<h2>
+<a name="1-starting-whith-this-script" class="anchor" href="#1-starting-whith-this-script"><span class="octicon octicon-link"></span></a>1) Starting whith this script</h2>
+
+<p>Before importing GifLoader script, make you have JQuery.</p>
+
+<p>Once Jquery is imported, do like following to include GifLoader :
+You need to import GifLoader script in your HTML Document :</p>
+
+<pre><code>&lt;!-- JS --&gt;
+&lt;script src="../src/js/gif_loader.js" type="text/javascript" charset="utf-8" async defer&gt;&lt;/script&gt;
+</code></pre>
+
+<p>Once Javascript Script is imported, do the same for the CSS Script which will help GifLoader.   </p>
+
+<pre><code>&lt;!-- CSS --&gt;
+&lt;link rel="stylesheet" type="text/css" href="../src/css/gif-loader.css"&gt;
+</code></pre>
+
+<p>That's all. Your are now ready to use GifLoader</p>
+
+<h2>
+<a name="2-client-side-gifloader-managment" class="anchor" href="#2-client-side-gifloader-managment"><span class="octicon octicon-link"></span></a>2) Client side (GifLoader managment)</h2>
+
+<p>For the client side, about managing GifLoader, here is a simple sample code for GifLoader execution.</p>
+
+<pre><code>// Initialise GifLoader
+var al = new gifLoader(".ajaxLoader");
+
+// Update GifLoader placement in case of Div size change
+al.update_size();
+
+// Remove GifLoader when finished
+al.remove();
+</code></pre>
+
+<h2>
+<a name="3-want-to-change-gif-image-" class="anchor" href="#3-want-to-change-gif-image-"><span class="octicon octicon-link"></span></a>3) Want to change Gif Image ?</h2>
+
+<p>If you want to change the Gif Image, you may Override CSS script default GifLoader Image definition.
+Create another script where you will define another Gif Image like the following:</p>
+
+<pre><code>.gif_loader {
+    background: url("img/another-gif-loader.gif") no-repeat center center transparent !important;
+    /* Don't forget the !important at the end! */
+}
+</code></pre>
+
+<p>Enjoy !</p>
+
+<h3>
+<a name="author" class="anchor" href="#author"><span class="octicon octicon-link"></span></a>Author</h3>
+
+<p>Jean Bordat
+<a href="mailto:bordat.jean@gmail.com">bordat.jean@gmail.com</a>
+<a href="http://jean.bordat.me">http://jean.bordat.me</a></p>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
