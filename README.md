@@ -49,7 +49,7 @@ Create another script where you will define another Gif Image like the following
 	}
 
 	
-Enjoy !
+### Enjoy !
 
 ### Author
 Jean Bordat
