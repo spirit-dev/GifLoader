@@ -1,0 +1,57 @@
+<html>
+<head>
+	<title>Sample of Gif Loader</title>
+	
+	<!-- 1 ___ IMPORT JQuery -->
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8" async defer></script>
+
+	<!-- 2 ___ IMPORT GifLoader
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../src/css/gif-loader.css">
+		<!-- JS -->
+		<script src="../src/js/gif_loader.js" type="text/javascript" charset="utf-8" async defer></script>
+	
+	
+	<!-- 3 ___ Define your own script to manage GifLoader -->
+	<script>
+		function execute() {
+			
+			// Initialise GifLoader
+			var al = new gifLoader(".ajaxLoader");
+			
+			// Update GifLoader placement in case of Div size change
+			al.update_size();
+			
+			// Here, for the example we make a 5 sec loop before removing GifLoader
+			setTimeout(function() {
+			// Remove GifLoader when finished
+				al.remove();
+			}, 5000);
+		}
+	</script>
+	
+	<!-- 4 ___ If you want to override Gif Image, you may do it like this -->
+	<!-- Uncomment to see Image Overriding -->
+	<!-- <style media="screen" type="text/css">
+		.gif_loader {
+			background: url("img/another-gif-loader.gif") no-repeat center center transparent !important;
+			/* Don't forget the !important at the end! */
+		}
+	</style> -->
+	
+</head>
+<body>
+
+	<div class="ajaxLoader" style="margin: 10%; border: 1px solid">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+
+	<a href="#" onclick="execute();">GO GIF LOAD</a>
+
+</body>
+</html>

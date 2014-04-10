@@ -1,15 +1,15 @@
 /**
 * @brief Displays a loader
-* @details This funciton renders a loader gif for each ajax request
+* @details This function renders a loader gif
 * 
 * @param  div which will be loaded
 * @return nothing
 * 
 * @author Jean Bordat <bordat@gmail.com>
 */
-function ajaxLoader (el, options) {
+function gifLoader (el, options) {
     
-    // Définition des options par défaut
+    // Options default definitions
     var defaults = {
         bgColor : '#F5F5F5',
         duration : 800,
@@ -18,14 +18,17 @@ function ajaxLoader (el, options) {
     }
     this.options = jQuery.extend(defaults, options);
     this.container = $(el);
-
+	
+	/**
+	 * Init function
+	 */
     this.init = function() {
         var container = this.container;
 
-        // Supprimer tous les autre loaders
+        // Delete previous active loaders in this element
         this.remove(); 
 
-        // Création de la div loader
+        // Div "Loader" initialisation
         var overlay = $('<div id="loader"></div>').css({
             'background-color': this.options.bgColor,
             'opacity':this.options.opacity,
@@ -36,23 +39,26 @@ function ajaxLoader (el, options) {
             'left':'0px',
             'z-index':99999,
             'margin-top': (1 - (container.height() + 1))
-        }).addClass('ajax_overlay');
+        }).addClass('gif_overlay');
 
-        // Overrider la class visé pour accueillir le loader
+        // Target class override in order to host the Loader
         if (this.options.classOveride) {
             overlay.addClass(this.options.classOveride);
         }
 
-        // Placement de l'overlay
+        // Overlay placement
         container.append(
             overlay.append(
-                $('<div></div>').addClass('ajax_loader')
+                $('<div></div>').addClass('gif_loader')
             ).fadeIn(this.options.duration)
         );
     };
 
+	/*
+	 * Loader remove function
+	 */
     this.remove = function(){
-        var overlay = this.container.children(".ajax_overlay");
+        var overlay = this.container.children(".gif_overlay");
         if (overlay.length) {
             overlay.fadeOut(this.options.classOveride, function() {
                 overlay.remove();
@@ -60,6 +66,9 @@ function ajaxLoader (el, options) {
         }              
     }
 
+	/*
+	 * Function updating Gif placement in case of div size change
+	 */
     this.update_size = function(){
         var container = this.container;
         var loader = container.find('#loader');
