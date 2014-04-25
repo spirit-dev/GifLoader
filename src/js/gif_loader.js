@@ -14,7 +14,8 @@ function gifLoader (el, options) {
         bgColor : '#F5F5F5',
         duration : 800,
         opacity : 0.7,
-        classOveride : false
+        classOveride : false,
+        borderRadius: 5
     }
     this.options = jQuery.extend(defaults, options);
     this.container = $(el);
@@ -38,7 +39,8 @@ function gifLoader (el, options) {
             'top':'0px',
             'left':'0px',
             'z-index':99999,
-            'margin-top': (1 - (container.height() + 1))
+            'margin-top': (1 - (container.height() + 1)),
+            'border-radius': this.options.borderRadius
         }).addClass('gif_overlay');
 
         // Target class override in order to host the Loader
