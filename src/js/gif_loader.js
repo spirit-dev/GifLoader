@@ -15,7 +15,8 @@ function gifLoader (el, options) {
         duration : 800,
         opacity : 0.7,
         classOveride : false,
-        borderRadius: 5
+        borderRadius: 5,
+        zIndex: 999
     }
     this.options = jQuery.extend(defaults, options);
     this.container = $(el);
@@ -38,7 +39,7 @@ function gifLoader (el, options) {
             'position':'relative',
             'top':'0px',
             'left':'0px',
-            'z-index':99999,
+            'z-index':this.options.zIndex,
             'margin-top': (1 - (container.height() + 1)),
             'border-radius': this.options.borderRadius
         }).addClass('gif_overlay');
